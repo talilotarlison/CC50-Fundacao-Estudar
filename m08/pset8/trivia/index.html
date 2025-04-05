@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <title>Trivia!</title>
+
+</head>
+
+<body>
+
+  <div class="jumbotron">
+    <h1>Trivia!</h1>
+  </div>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>Part 1: Multiple Choice </h2>
+      <hr>
+      <h3>Qual melhor jogador brasileiro da historia do futebol?</h3>
+      <!-- TODO: Add multiple choice question here -->
+      <button class="bts" id="op1" type="button" value="Ronaldo Fenomeno">Ronaldo Fenomeno</button>
+      <button class="bts" id="op2" type="button">Ronaldinho Gaucho</button>
+      <button class="bts" id="op3" type="button">Pele</button>
+      <button class="bts" id="op4" type="button">Leonel Messi</button>
+      <button class="bts" id="op5" type="button">Maradona</button>
+      <button class="bts" id="op6" type="button">Neymar Junior</button>
+      <button class="bts" id="op7" type="button">Cristiano Ronaldo</button>
+    </div>
+    <div id="resultado1"></div>
+    <div class="section">
+      <h2>Part 2: Free Response</h2>
+      <hr>
+      <h3>Qual maior time da europa , que tem mais UCL na historia?</h3>
+      <!-- TODO: Add free response question here -->
+      <input id="resposta" type="text" placeholder="Escolha um time.">
+      <button onclick="verificar()" id="check" type="submit">Verificar resposta</button>
+    </div>
+    <div id="resultado2"></div>
+  </div>
+  <script src="script.js">
+
+  </script>
+
+</body>
+
+</html>

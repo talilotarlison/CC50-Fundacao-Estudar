@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Form</title>
+</head>
+
+<body>
+    <form>
+        <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+        <input type="submit">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+                let name = document.querySelector('#name').value;
+                alert('hello, ' + name);
+            });
+        });
+    </script>
+    <script>
+
+        function greet() {
+            let name = document.querySelector('#name').value;
+            alert('hello, ' + name);
+        }
+
+        function listen() {
+            document.querySelector('form').addEventListener('submit', greet);
+        }
+
+        document.addEventListener('DOMContentLoaded', listen);
+
+    </script>
+
+</body>
+
+</html>

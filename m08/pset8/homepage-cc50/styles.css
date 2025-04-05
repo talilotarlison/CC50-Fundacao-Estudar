@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #d3dde6;
+  font-family: 'Libre Caslon Text', serif;
+}
+
+/* https://htmlcolorcodes.com */
+
+.navbar {
+  padding: 10px 10px;
+
+}
+
+#home,
+li.nav-item>a {
+  color: white;
+}
+
+.name {
+  color: #F2F4F4;
+  font-weight: 700;
+  font-size: 1, 5rem;
+}
+
+
+main {
+  padding: 30px;
+}
+
+.professor {
+  padding: 10vh 20vw;
+}
+
+.card {
+  margin: 0 30px
+}
+
+h1,
+h2 {
+  margin: 20px;
+}
+
+p {
+  margin: 15px 20px;
+}
+
+#btnc {
+  height: 50px;
+  padding: 10px;
+  margin: 0 15px;
+  background-color: #8f1e2d !important;
+  border: solid 1px #8f1e2d !important;
+}
+
+#btnc:hover {
+  opacity: 0.8 !important;
+}
+
+#footer {
+  color: gray !important;
+}
+
+.curso_aula {
+  display: flex !important;
+  flex-direction: row;
+  gap: 40px;
+  align-items: start;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+
+  /* Estilos */
+  .curso_aula {
+    flex-direction: column;
+  }
+}
