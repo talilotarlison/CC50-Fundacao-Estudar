@@ -13,3 +13,5 @@ INSERT INTO birthdays (name, month, day) VALUES ('Hermione', '9', '19');
 select * from birthdays;
 
 drop table birthdays;
+
+DELETE FROM birthdays WHERE id = 7;
