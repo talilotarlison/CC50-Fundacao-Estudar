@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C$50 Finance - Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            color: red;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .logo .blue{
+          color: blue;
+        }
+        .logo .yellow{
+          color: yellow;
+        }
+
+        .logo .green{
+          color: green;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        a.btn {
+            display: inline-block !important;
+            width: 90% !important;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-register {
+            background-color: #28a745;
+        }
+
+        .btn-register:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        .error{
+            color:red;
+        }
+        .sucess{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span class="blue">C</span>$<span class="yellow">5</span><span class="green">0</span> Finance</div>
+        <nav>
+            <a href="/">Login</a></a>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <h2>Create Your Account</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="senha" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password Confirm</label>
+                <input type="password" id="password" name="senha_confirme" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p class="error">{{msg_erro}}</p>
+            <p class="sucess">{{msg_sucess}}</p>
+            <p>Do you have an account? Log in.</p>
+            <a href="/" class="btn btn-register">Login</a>
+        </form>
+    </div>
+
+    <div class="footer">
+        Data provided for free by IEX. View IEX's Terms of Use.
+    </div>
+</body>
+</html>

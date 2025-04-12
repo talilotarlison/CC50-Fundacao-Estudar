@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C$50 Finance - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            color: red;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .logo .blue{
+          color: blue;
+        }
+        .logo .yellow{
+          color: yellow;
+        }
+
+        .logo .green{
+          color: green;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span class="blue">C</span>$<span class="yellow">5</span><span class="green">0</span> Finance</div>
+        <nav>
+            <a href="/quote">Quote</a>
+            <a href="/buy">Buy</a>
+            <a href="/sell">Sell</a>
+            <a href="/history">History</a>
+            <a href="/home">{{usuario}}</a>
+            <a href="/logout">Log Out</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <p>Bem-Vindo Usuario: {{session.get('usuario_logado').capitalize() }}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in registros %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3]|int }}</td>
+                    <td>${{ "%.2f"|format(row[4]) if row[4] else '' }}</td>
+                    <td>
+                        {% if row[4] > 0 %}
+                            ${{ "%.2f"|format(row[3] * row[4]) }}
+                        {% else %}
+                            $0.00
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3"></td>
+                    <td><strong>TOTAL</strong></td>
+                    <td><strong>${{ "%.2f"|format(total_geral) }}</strong></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        Data provided for free by IEX. View IEX's Terms of Use.
+    </div>
+</body>
+</html>
